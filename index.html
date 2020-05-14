@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function mapToObj(map){
+  const obj = {}
+  for (let [k,v] of map)
+    obj[k] = v
+  return obj
+}
+
+function processFormData() {
+	var myMap = new Map();
+
+  const nameElement = document.getElementById("name");
+  const name = nameElement.value;
+  const emailElement = document.getElementById("email");
+  const email = emailElement.value;
+  myMap.set('email', email);
+
+  var myJSON = mapToObj(myMap);
+
+
+  alert(JSON.stringify(myJSON));
+
+  // alert(JSON.parse(myMap));
+}
+	</script>>
+</head>
+<body>
+
+<form name='form' id='form'>
+  姓名：
+  <input type='text' name='name' id='name' /> E-mail：
+  <input type='text' name='email' id='email' />
+  <input type='button' name='submit' value='送出' onclick='processFormData();' />
+</form>
+
+</body>
+</html>
